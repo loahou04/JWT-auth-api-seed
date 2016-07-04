@@ -1,0 +1,15 @@
+{
+    "appConfig": {
+        "port": 3000
+    },
+    "dbConfig": {
+        "host":"localhost",
+        "port": 27017,
+        "dbName": "dev",
+        "user": "dev-api",
+        "password": "dev123"
+    },
+    "authConfig": {
+        "secret": "<secret string>"
+    }
+}

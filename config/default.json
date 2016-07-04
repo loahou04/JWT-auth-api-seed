@@ -1,0 +1,15 @@
+{
+    "appConfig": {
+        "port": 3000
+    },
+    "dbConfig": {
+        "host":"<mongo host>",
+        "port": 27017,
+        "dbName": "<dbName>",
+        "user": "<dbuser>",
+        "password": "<dbusername>"
+    },
+    "authConfig": {
+        "secret": "<secret string>"
+    }
+}
