@@ -11,7 +11,6 @@ router.get('/', passport.authenticate('jwt', {session: false}), function(req, re
 });
 
 router.post('/register', function(req, res) {
-	console.log('register');
 	userService.insertUser(req.body).then(function(user) {
 		// respond without a password so that we have no chance of exposing it to the end user
 		user.password = '';

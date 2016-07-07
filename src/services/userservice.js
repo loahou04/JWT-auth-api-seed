@@ -2,27 +2,8 @@
 
 let bcrypt = require('bcrypt'),
 	User = require('../models/users'),
-	UserSchema = require('../models/users').model('users').schema,
 	jwt = require('jsonwebtoken'),
 	config = require('config');
-
-// Saves the user's password hashed
-UserSchema.pre('validate', function(next) {
-	var user = this;
-	if (!user.password) {
-		return next(new Error('password required'));
-	}
-	if (user.password && (this.isModified('password') || this.isNew)) {
-		module.exports.hashPassword(user.password).then(function(hash) {
-			user.password = hash;
-			return next();
-		}, function(err) {
-			return next(new Error(err));
-		});
-	} else {
-		return next();
-	}
-});
 
 module.exports = {
 
@@ -111,17 +92,5 @@ module.exports = {
 		return {
 			token: 'JWT ' + token
 		};
-	},
-
-	hashPassword: function(password) {
-		let promise = new Promise(function(resolve, reject) {
-			bcrypt.hash(password, 10, function(err, hash) {
-				if (err) {
-					reject(err);
-				}
-				resolve(hash);
-			});
-		});
-		return promise;
 	}
 };

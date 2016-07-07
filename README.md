@@ -1,6 +1,6 @@
-# DHC-API
+# JWT-auth-api-seed
 
-This is the DHC-api written in nodeJS.  In order for this app to run locally there are a few steps you need to run locally.
+Seed nodeJS application for any JWT token based user authentication.  
 
     npm install
 
@@ -19,7 +19,5 @@ if you would like to run while developing any files you change will automaticall
     npm run dev
 
 # Deploying app
-
-Jenkins will take care of deploying the application as a docker container.  
 
 
