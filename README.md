@@ -18,6 +18,3 @@ if you would like to run while developing any files you change will automaticall
 
     npm run dev
 
-# Deploying app
-
-

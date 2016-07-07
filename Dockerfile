@@ -2,8 +2,8 @@
 FROM node:4-wheezy
 
 # create project structure
-RUN mkdir /DHC-api
-WORKDIR /DHC-api
+RUN mkdir /JWT-auth-api-seed
+WORKDIR /JWT-auth-api-seed
 
 # create config and copy
 RUN mkdir config
