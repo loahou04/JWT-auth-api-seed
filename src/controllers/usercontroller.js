@@ -55,6 +55,13 @@ router.post('/authenticate', function(req, res) {
 				});
 			}
 		};
+
+		if(!user) {
+			return res.status(404).send({
+				message: 'User not found with that email'
+			});
+		}
+
 		if (req.body.password) {
 			// Check if password matches
 			userService.comparePassword(user, req.body.password).then(tokencreate, serverError);
