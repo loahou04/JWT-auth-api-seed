@@ -85,8 +85,13 @@ module.exports = {
 
 	createToken: function(user) {
 		// Create token if the password matched and no error was thrown
-		user.password = '';
-		var token = jwt.sign(user, config.authConfig.secret, {
+		const userToken = {
+			username: user.username,
+			firstName: user.firstName,
+			lastName: user.lastName,
+			_id: user._id
+		};
+		var token = jwt.sign(userToken, config.authConfig.secret, {
 			expiresIn: 10080 // in seconds
 		});
 		return {
